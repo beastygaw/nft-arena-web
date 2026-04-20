@@ -507,6 +507,19 @@ nav {
   padding: 16px 20px 20px;
   position: relative;
 }
+.card-img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+  transition: transform 0.3s;
+}
+
+.nft-card:hover .card-img {
+  transform: scale(1.1) translateY(-5px);
+}
 
 .card-name {
   font-family: 'Cinzel', serif;
@@ -1205,19 +1218,101 @@ nav {
 
 const CARDS = [
   // Original 6
-  { name:'Dragon Warrior', attack:85, defense:60, rarity:3, emoji:'🐉', bg:'linear-gradient(135deg,#3b0000,#6b0000)', element:'Fire' },
-  { name:'Ice Phoenix', attack:70, defense:90, rarity:2, emoji:'🦅', bg:'linear-gradient(135deg,#0c1f3d,#0d3b6e)', element:'Ice' },
-  { name:'Shadow Wolf', attack:95, defense:45, rarity:3, emoji:'🐺', bg:'linear-gradient(135deg,#1a0a2e,#3d1a6e)', element:'Dark' },
-  { name:'Storm Eagle', attack:75, defense:75, rarity:2, emoji:'⚡', bg:'linear-gradient(135deg,#2d1a00,#5c3400)', element:'Storm' },
-  { name:'Earth Golem', attack:50, defense:99, rarity:1, emoji:'🪨', bg:'linear-gradient(135deg,#0a1f0a,#1a3d1a)', element:'Earth' },
-  { name:'Fire Sprite', attack:88, defense:40, rarity:2, emoji:'🔥', bg:'linear-gradient(135deg,#3b0a0a,#7a1a00)', element:'Fire' },
+  {
+  name:'Lava Demon',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/LavaDemon.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  {
+  name:'Celestial Angel',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/CelestialAngel.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  {
+  name:'Forest Titan',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/ForestTitan.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  
+  {
+  name:'Void Reaper',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/VoidReaper.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  {
+  name:'Fire Sprite',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/FireSprite.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
 
-  // 5 New Cards
-  { name:'Void Reaper', attack:99, defense:30, rarity:3, emoji:'💀', bg:'linear-gradient(135deg,#0a0a0a,#2d0047)', element:'Dark' },
-  { name:'Sea Serpent', attack:72, defense:82, rarity:2, emoji:'🌊', bg:'linear-gradient(135deg,#001a2d,#003d5c)', element:'Water' },
-  { name:'Forest Titan', attack:60, defense:95, rarity:2, emoji:'🌿', bg:'linear-gradient(135deg,#0a1f00,#1a4d00)', element:'Nature' },
-  { name:'Celestial Angel', attack:80, defense:80, rarity:3, emoji:'👼', bg:'linear-gradient(135deg,#1a1a2e,#4a3f6b)', element:'Holy' },
-  { name:'Lava Demon', attack:93, defense:50, rarity:3, emoji:'😈', bg:'linear-gradient(135deg,#2d0a00,#6b1a00)', element:'Fire' },
+  {
+  name:'Earth Golem',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/EarthGolem.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+
+  {
+  name:'Storm Eagle',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/StormEagle.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  {
+  name:'Shadow Wolf',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/ShadowWolf.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  {
+  name:'Ice Phoenix',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/IcePhoenix.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+  {
+  name:'Dragon Warrior',
+  attack:85,
+  defense:60,
+  rarity:3,
+  image:'images/DragonWarrior.png',   
+  bg:'linear-gradient(...)',
+  element:'Fire'
+},
+
+  
 ]
 
 let walletAddress = null
@@ -1344,7 +1439,7 @@ async function mintCard(cardName) {
     }
     existing.push({ ...card, tx: txid, mintedAt: new Date().toISOString() })
     localStorage.setItem('myCards', JSON.stringify(existing))
-    showAlert('mintAlert', '✅ ' + card.emoji + ' ' + card.name + ' forged! TX: ' + txid.slice(0,16) + '...', 'success')
+    showAlert('mintAlert', '✅ ' + card.image + ' ' + card.name + ' forged! TX: ' + txid.slice(0,16) + '...', 'success')
   } catch (err) {
     showAlert('mintAlert', '❌ ' + (err.message || 'Forging failed'), 'error')
   }
@@ -1377,7 +1472,7 @@ function renderCards() {
             <circle cx="240" cy="150" r="2" fill="${card.elementColor}" opacity="0.3"/>
             <circle cx="150" cy="20" r="1.5" fill="${card.elementColor}" opacity="0.5"/>
           </svg>
-          <div class="char-emoji">${card.emoji}</div>
+          <img src="${card.image}" class="card-img" />
         </div>
         <div class="rarity-banner">${rarityLabel(card.rarity)}</div>
         <div class="card-info" style="background:${card.bg}">
@@ -1435,7 +1530,7 @@ function renderCollection() {
             <circle cx="150" cy="100" r="80" fill="${card.elementColor}" fill-opacity="0.15"/>
             <ellipse cx="150" cy="160" rx="80" ry="20" fill="rgba(0,0,0,0.4)"/>
           </svg>
-          <div class="char-emoji">${card.emoji}</div>
+          <img src="${card.image}" class="card-img" />
         </div>
         <div class="rarity-banner">${rarityLabel(card.rarity)}</div>
         <div class="card-info" style="background:${card.bg}">
@@ -1478,7 +1573,8 @@ function renderBattle() {
   } else {
     myDiv.innerHTML = myCards.map((card, i) => `
       <div class="battle-card-item ${selectedCard?.name === card.name ? 'selected' : ''}" onclick="selectCard(${i})">
-        <div class="battle-char">${card.emoji}</div>
+        
+        <img src="${card.image}" class="card-img" />
         <div>
           <div class="battle-card-name">${card.name}</div>
           <div class="battle-card-stats" style="color:${card.elementColor || 'rgba(255,255,255,0.5)'}">ATK ${card.attack} · DEF ${card.defense}</div>
@@ -1519,7 +1615,7 @@ function doBattle(oppIndex) {
     <div class="result-banner">
       <div class="result-title">${emoji} ${winner} Wins!</div>
       <div class="result-sub">
-        ${selectedCard.emoji} ${selectedCard.name} (PWR: ${playerPower}) vs ${opp.emoji} ${opp.name} (PWR: ${oppPower})
+        ${selectedCard.image} ${selectedCard.name} (PWR: ${playerPower}) vs ${opp.emoji} ${opp.name} (PWR: ${oppPower})
       </div>
     </div>
   `
