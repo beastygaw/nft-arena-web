@@ -3,7 +3,7 @@
 > Built for Colosseum Hackathon 2026
 
 ## 🎮 Live Demo
-👉 **https://beastygaw.github.io/nft-arena-web/**
+👉 **(https://beastygaw.github.io/solforge/)**
 
 ## 📖 About
 SolForge is a fully on-chain NFT trading card game built on Solana. Players can mint unique NFT cards with on-chain stats, build their collection, and battle other players — all powered by Solana's blazing fast blockchain.
