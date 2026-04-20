@@ -1204,72 +1204,20 @@ nav {
 <script>
 
 const CARDS = [
-  {
-    name: 'Dragon Warrior',
-    attack: 85, defense: 60, rarity: 3,
-    emoji: '🐉',
-    element: '🔥 Fire',
-    elementColor: '#f87171',
-    bg: 'linear-gradient(160deg, #1a0000 0%, #3b0000 40%, #7f1d1d 100%)',
-    desc: '"Ancient fire dragon reborn in digital flame. Its breath melts steel."',
-    type: 'legendary'
-  },
-  {
-    name: 'Ice Phoenix',
-    attack: 70, defense: 90, rarity: 2,
-    emoji: '🦅',
-    element: '❄️ Ice',
-    elementColor: '#93c5fd',
-    bg: 'linear-gradient(160deg, #030d1a 0%, #0c1f3d 40%, #1e3a8a 100%)',
-    desc: '"Reborn from glacial depths, this bird freezes all who dare challenge it."',
-    type: 'rare'
-  },
-  {
-    name: 'Shadow Wolf',
-    attack: 95, defense: 45, rarity: 3,
-    emoji: '🐺',
-    element: '🌑 Shadow',
-    elementColor: '#c084fc',
-    bg: 'linear-gradient(160deg, #0a0010 0%, #1a0a2e 40%, #4c1d95 100%)',
-    desc: '"Hunts in darkness. Its bite corrupts the soul of any fallen foe."',
-    type: 'legendary'
-  },
-  {
-    name: 'Storm Eagle',
-    attack: 75, defense: 75, rarity: 2,
-    emoji: '⚡',
-    element: '⚡ Storm',
-    elementColor: '#fbbf24',
-    bg: 'linear-gradient(160deg, #120d00 0%, #2d1a00 40%, #78350f 100%)',
-    desc: '"Commands the sky. Lightning strikes at its command."',
-    type: 'rare'
-  },
-  {
-    name: 'Earth Golem',
-    attack: 50, defense: 99, rarity: 1,
-    emoji: '🪨',
-    element: '🌍 Earth',
-    elementColor: '#86efac',
-    bg: 'linear-gradient(160deg, #020a02 0%, #0a1f0a 40%, #14532d 100%)',
-    desc: '"Unyielding as a mountain. Not one attack has ever broken its shell."',
-    type: 'common'
-  },
-  {
-    name: 'Fire Sprite',
-    attack: 88, defense: 40, rarity: 2,
-    emoji: '🔥',
-    element: '🔥 Fire',
-    elementColor: '#fb923c',
-    bg: 'linear-gradient(160deg, #1a0500 0%, #450a0a 40%, #991b1b 100%)',
-    desc: '"Small but devastating. Leaves nothing but ash in its wake."',
-    type: 'rare'
-  },
-]
+  // Original 6
+  { name:'Dragon Warrior', attack:85, defense:60, rarity:3, emoji:'🐉', bg:'linear-gradient(135deg,#3b0000,#6b0000)', element:'Fire' },
+  { name:'Ice Phoenix', attack:70, defense:90, rarity:2, emoji:'🦅', bg:'linear-gradient(135deg,#0c1f3d,#0d3b6e)', element:'Ice' },
+  { name:'Shadow Wolf', attack:95, defense:45, rarity:3, emoji:'🐺', bg:'linear-gradient(135deg,#1a0a2e,#3d1a6e)', element:'Dark' },
+  { name:'Storm Eagle', attack:75, defense:75, rarity:2, emoji:'⚡', bg:'linear-gradient(135deg,#2d1a00,#5c3400)', element:'Storm' },
+  { name:'Earth Golem', attack:50, defense:99, rarity:1, emoji:'🪨', bg:'linear-gradient(135deg,#0a1f0a,#1a3d1a)', element:'Earth' },
+  { name:'Fire Sprite', attack:88, defense:40, rarity:2, emoji:'🔥', bg:'linear-gradient(135deg,#3b0a0a,#7a1a00)', element:'Fire' },
 
-const OPPONENTS = [
-  { name: 'Dark Knight', attack: 80, defense: 70, emoji: '🗡️', element: '💀 Death' },
-  { name: 'Sea Serpent', attack: 90, defense: 55, emoji: '🐍', element: '🌊 Water' },
-  { name: 'Thunder God', attack: 95, defense: 65, emoji: '⚡', element: '⚡ Storm' },
+  // 5 New Cards
+  { name:'Void Reaper', attack:99, defense:30, rarity:3, emoji:'💀', bg:'linear-gradient(135deg,#0a0a0a,#2d0047)', element:'Dark' },
+  { name:'Sea Serpent', attack:72, defense:82, rarity:2, emoji:'🌊', bg:'linear-gradient(135deg,#001a2d,#003d5c)', element:'Water' },
+  { name:'Forest Titan', attack:60, defense:95, rarity:2, emoji:'🌿', bg:'linear-gradient(135deg,#0a1f00,#1a4d00)', element:'Nature' },
+  { name:'Celestial Angel', attack:80, defense:80, rarity:3, emoji:'👼', bg:'linear-gradient(135deg,#1a1a2e,#4a3f6b)', element:'Holy' },
+  { name:'Lava Demon', attack:93, defense:50, rarity:3, emoji:'😈', bg:'linear-gradient(135deg,#2d0a00,#6b1a00)', element:'Fire' },
 ]
 
 let walletAddress = null
