@@ -1,12 +1,12 @@
-# ⚔️ SolForge — Solana NFT Card Game
+# ⚔️ SolaraForge — Solana NFT Card Game
 
 > Built for Colosseum Hackathon 2026
 
 ## 🎮 Live Demo
-👉 **https://beastygaw.github.io/solforge/**
+👉 **https://beastygaw.github.io/solforge/](https://solaraforge.vercel.app/**
 
 ## 📖 About
-SolForge is a fully on-chain NFT trading card game built on Solana. Players can mint unique NFT cards with on-chain stats, build their collection, and battle other players — all powered by Solana's blazing fast blockchain.
+SolaraForge is a fully on-chain NFT trading card game built on Solana. Players can mint unique NFT cards with on-chain stats, build their collection, and battle other players — all powered by Solana's blazing fast blockchain.
 
 ## ✨ Features
 - 🎴 **Mint NFT Cards** — Each card is a unique NFT on Solana devnet with on-chain stats (Attack, Defense, Rarity)
@@ -24,18 +24,6 @@ SolForge is a fully on-chain NFT trading card game built on Solana. Players can 
 | Frontend | HTML5 + JavaScript |
 | Wallet | Phantom Wallet Adapter |
 | Hosting | GitHub Pages |
-
-## 📋 Smart Contract
-- **Program ID:** `2UKxt5rLyEcDP1TjoXnt78o97D13Xqc9oxqnEu4eBrCs`
-- **Network:** Solana Devnet
-- **Framework:** Anchor v0.29.0
-
-## 🔧 Smart Contract Instructions
-| Instruction | Description |
-|---|---|
-| `mint_card` | Mints a new NFT card with stats stored on-chain |
-| `battle` | Battles two cards, updates win/loss on-chain |
-| `get_card_stats` | Fetches card stats from blockchain |
 
 ## 🚀 How It Works
 1. Connect your Phantom wallet (set to Devnet)
