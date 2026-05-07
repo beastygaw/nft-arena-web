@@ -38,8 +38,6 @@ SolaraForge is a fully on-chain NFT trading card game built on Solana. Players c
 | 🟡 Legendary | Dragon Sovereign, Shadow Reaper |
 | 🔵 Rare | Frost Phoenix, Storm Titan, Ember Witch |
 | ⚪ Common | Stone Guardian |
-
-
 ## 📁 Smart Contract Repo
 👉 https://github.com/beastygaw/solana-nft-arena
 
